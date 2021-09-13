@@ -1,0 +1,12 @@
+<div *ngFor="let x of data1.data;index as i">
+   {{i+1}}. <div >
+<img (click)="upvote()" [hidden]="s" height="20px" width="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6D6HQRkVCK_htqe5KEGgPwsqQSKLax8_jQ&usqp=CAU" alt="upvote" />
+ &nbsp;<a href="{{x.url}}">{{x.title}}</a>
+ <a href="view?url={{x.url}}">({{subs(x.url)}})</a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <!-- make diff div-->{{x.score}} points by <a href="user?user={{x.by}}">{{x.by}}</a> 
+ &nbsp;
+<a href="comment?id={{x.id}}">{{caltime(x.time)}}</a>|<a href="" (click)="adhide()">hide</a>|
+<a href="comment?id={{x.id}}">{{x.kids.length}}comments</a>
+</div>
+</div>

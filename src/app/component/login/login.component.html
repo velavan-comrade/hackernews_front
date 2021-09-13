@@ -1,0 +1,4 @@
+<div *ngIf="!log"><input type="text" #user><button (click)=cred(this.user.value)>login</button>
+</div>
+<div *ngIf="log"><span>{{user1}}</span><button (click)=logout()>logout</button>
+</div>

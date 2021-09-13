@@ -1,0 +1,15 @@
+<div *ngFor="let x of ques.data">
+    
+  <img (click)="upvote()" height="20px" width="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6D6HQRkVCK_htqe5KEGgPwsqQSKLax8_jQ&usqp=CAU" alt="upvote" />
+     &nbsp;<a href="{{x.url}}">{{x.title}}</a>
+     <a href="view?url={{x.url}}">({{subs(x.url)}})</a><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     make diffdiv{{x.score}} points by <a href="user?user={{x.by}}">{{x.by}}</a> 
+     &nbsp;
+    <a href="comment?id={{x.id}}">{{caltime(x.time)}}</a>|<a href="" (click)="adhide()">hide</a>|
+    <a href="comment?id={{x.id}}">{{x.kids.length}}comments</a>
+    
+</div>
+<textarea #comment></textarea>
+    <button (click)="addc(comment.value)">add comment</button>
+<div *ngFor="let x1 of com.data"><span>{{x1.text}}</span></div>
