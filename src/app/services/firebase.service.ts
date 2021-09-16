@@ -23,6 +23,7 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
       alert("sigup success please login!!")
+      location.reload()
     }).catch(err=>{
       alert(err)
     })
