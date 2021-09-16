@@ -24,7 +24,16 @@ console.log(sessionStorage.getItem("user"))
       "title":title,
       "url":url
     }
-      this._service.addPost(this.data).subscribe(data=>{console.log(data)})
+      this._service.addPost(this.data).subscribe(data=>{this.data=data
+      if(this.data.status=="success")
+    {
+      alert("post added")
+      location.reload()
+    }
+    else{
+      alert("not added try again")
+    }
+  })
   }
   ngOnInit(): void {
   }
