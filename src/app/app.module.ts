@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import{MatIconModule}from '@angular/material/icon';
 import { MatStepperModule} from '@angular/material/stepper';
+import{ MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MatStepperModule} from '@angular/material/stepper';
     MatButtonModule,
     MatIconModule,
     MatStepperModule,
+    MatTabsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCFcLMhVUT4ItQbmx4gLoW2lc_imTwHO7s",
       authDomain: "hackernews-1df52.firebaseapp.com",

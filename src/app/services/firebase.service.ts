@@ -12,12 +12,19 @@ export class FirebaseService {
     .then(res=>{
       this.isLoggedIn= true
       sessionStorage.setItem('user',JSON.stringify(res.user?.email))
+    }).
+    catch(err=>{
+      console.log(err);
+      alert(err)
     })
   }
 
   async signup(email: string, password:string){
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
+      alert("sigup success please login!!")
+    }).catch(err=>{
+      alert(err)
     })
   }
   logout(){

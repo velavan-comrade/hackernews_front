@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
   async onSignin(email:string,password:string){
     await this.Firebase.signin(email,password)
     if(this.Firebase.isLoggedIn)
+    {
     this.isSignedIn =true
     location.reload()
+    }
   }
 
   handleLogout(){

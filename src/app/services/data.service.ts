@@ -52,7 +52,7 @@ export class DataService {
     var current=Date.now();
     var result= current-ctime;
     result= result/1000;
-    console.log(new Date(ctime));
+    
     if(result<60){
       return Math.floor(result)+' seconds ago';
     }
@@ -63,6 +63,7 @@ export class DataService {
       return Math.floor((result/60)/60)+' hours ago';
     }
     else if((((result/60)/60)/24)<7){
+      console.log(result)
       return Math.floor(((result/60)/60)/24)+' days ago';
     }
     else if(((((result/60)/60)/24)/7)<5){

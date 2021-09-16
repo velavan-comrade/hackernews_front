@@ -3,19 +3,16 @@
         <img class="nav-logo" src="https://news.ycombinator.com/y18.gif">
     </div>
     <p>Hacker News</p>
-        <li routerLinkActive="active">
-            <a href="past">past</a> 
-        </li>
-        <li routerLinkActive="active">
+       
+            <a href="past">past</a>      
             <a href="news">news</a> 
-        </li>
-        <li routerLinkActive="active">
-            <a href="submit">submit</a> 
-        </li>
-        <a *ngIf="check()" href="/login" routerLinkActive="active" >login</a>
-<div *ngIf="!check()">
+
+            <a href="submit">submit</a>
+
+        <a mat-raised-button style="margin-left:700px;" *ngIf="check()" href="/login" routerLinkActive="active" >login</a>
+<div *ngIf="!check()" style="margin-left:700px;" >
     <span>{{user}}</span>
-    <button (click)="logout()">logout</button>
+    <button mat-raised-button (click)="logout()">logout</button>
 </div>
         
 </div>
