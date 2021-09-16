@@ -22,13 +22,17 @@ public data:any;
 
     addc(text:any)
     {
-      this.data={
-        "user":"vel",
-        "text":text,
-        "parent":this.id,
-
+      if(sessionStorage.getItem("user")==null)
+      {
+        alert("please!! login")
+        return
       }
-      this._service.addComment(this.data).subscribe(data1=>console.log(data1))
+      this.data={
+        "user":sessionStorage.getItem("user"),
+        "text":text,
+        "parent":this.id, 
+      }
+      this._service.addComment(this.data).subscribe(data1=>{console.log(data1)})
     }
     upvote()
     {
@@ -42,9 +46,7 @@ public data:any;
   }
   public caltime(ctime:any)
   {
-    var current=Date.now();
-    
-    return ctime+current ;
+   return this._service.caltime(ctime);
   }
   adhide(/*passid*/)
   {

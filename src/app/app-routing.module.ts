@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommentComponent } from './component/comment/comment.component';
+import { LoginComponent } from './component/login/login.component';
 import { NewsComponent } from './component/news/news.component';
 import { PastComponent } from './component/past/past.component';
 import { PostComponent } from './component/post/post.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'submit',
     component:PostComponent
+  },
+  {
+    path:'login',
+    component:LoginComponent
   }
 
 ];

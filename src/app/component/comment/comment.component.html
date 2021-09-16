@@ -10,6 +10,21 @@
     <a href="comment?id={{x.id}}">{{x.kids.length}}comments</a>
     
 </div>
-<textarea #comment></textarea>
-    <button (click)="addc(comment.value)">add comment</button>
-<div *ngFor="let x1 of com.data"><span>{{x1.text}}</span></div>
+<mat-form-field appearance="fill">
+    <mat-label>comment</mat-label>
+    <textarea #comment matInput></textarea>
+  </mat-form-field><br>
+    <button mat-raised-button (click)="addc(comment.value)">add comment</button>
+
+    <div>
+        <mat-stepper orientation="vertical">
+            <mat-step *ngFor="let x1 of com.data">
+              <ng-template matStepLabel>{{x1.by}} {{caltime(x1.time)}} </ng-template>
+              <ng-template matStepContent>
+                 <p>{{x1.text}}</p>
+                <button mat-button matStepperNext>Next</button>
+              </ng-template>
+            </mat-step>
+        </mat-stepper>
+    </div>
+        

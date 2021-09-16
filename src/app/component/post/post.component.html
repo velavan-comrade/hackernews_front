@@ -1,19 +1,24 @@
-<div>
-<table>
-    <tr>
-        <td>title</td><td><input type="text" #title></td>
-    </tr>
-    <tr>
-        <td>url</td><td><input type="text" #url></td>
-    </tr>
-    <!-- <tr>
-        <td>text</td><td><textarea #text></textarea></td>
-    </tr> -->
-    <tr>
-        <td>
-            <button (click)="addpost(title.value,url.value)">submit</button>
-        </td>
-    </tr>
-</table>
-
-</div>
+  
+<div class="post">
+    <mat-card> 
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" #title>
+      </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field appearance="outline">
+        <mat-label>URL</mat-label>
+        <input matInput placeholder="url" #url>
+      </mat-form-field>
+    </p>
+        <!-- <tr>
+            <td>text</td><td><textarea #text></textarea></td>
+        </tr> -->
+        <tr>
+            <td>
+                <button mat-raised-button color="warn" (click)="addpost(title.value,url.value)">submit</button>
+            </td>
+        </mat-card>
+        </div> 

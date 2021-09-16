@@ -1,5 +1,8 @@
-<nav>
-    <ul>
+<div class="nav-bar">
+    <div>
+        <img class="nav-logo" src="https://news.ycombinator.com/y18.gif">
+    </div>
+    <p>Hacker News</p>
         <li routerLinkActive="active">
             <a href="past">past</a> 
         </li>
@@ -7,10 +10,14 @@
             <a href="news">news</a> 
         </li>
         <li routerLinkActive="active">
-            <a href="submit">news</a> 
+            <a href="submit">submit</a> 
         </li>
-    </ul>
-    <app-login></app-login>
-</nav>
+        <a *ngIf="check()" href="/login" routerLinkActive="active" >login</a>
+<div *ngIf="!check()">
+    <span>{{user}}</span>
+    <button (click)="logout()">logout</button>
+</div>
+        
+</div>
 
 <router-outlet></router-outlet>

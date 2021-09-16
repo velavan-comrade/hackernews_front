@@ -12,13 +12,19 @@ public data:any;
 
   addpost(title:any,url:any)
   {
-
+if(sessionStorage.getItem("user")==null)
+{
+  alert("Please!! login")
+  return
+}
+console.log(sessionStorage.getItem("user"))
     this.data={
-       //"user":sessionStorage.getItem("user"),
+      
+       "user":sessionStorage.getItem("user"),
       "title":title,
       "url":url
     }
-      this._service.addPost(this.data).subscribe(data=>console.log(data))
+      this._service.addPost(this.data).subscribe(data=>{console.log(data)})
   }
   ngOnInit(): void {
   }
